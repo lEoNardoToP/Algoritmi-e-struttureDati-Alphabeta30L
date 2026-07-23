@@ -1,16 +1,34 @@
 # AI Algorithms Portfolio
 
-This repository now contains three inspectable AI/algorithmic systems:
+This repository contains three inspectable AI/algorithmic systems:
 
 - **[NeuroForge C++](./neuroforge-cpp)** — reverse-mode autodiff, neural-network training, binary cross-entropy and Adam implemented from scratch;
 - **[DeepGrid Java](./deepgrid-java)** — a Deep Q-Network with manual backpropagation, replay buffer, Bellman targets and a target network;
-- **Polyglot Alpha-Beta Arena** — the original minimax engine implemented consistently across eight languages.
+- **Polyglot Alpha-Beta Arena** — minimax with alpha-beta pruning implemented consistently across eight languages.
 
 The two neural MVPs are summarized in [AI_MECHANICS.md](./AI_MECHANICS.md) and can be built together with:
 
 ```bash
 ./run_ai_mechanics.sh
 ```
+
+For interview preparation and reviewer context, read [TECHNICAL_INTERVIEW_NOTES.md](./TECHNICAL_INTERVIEW_NOTES.md). It explains the mechanics behind autodiff, Adam, DQN, Bellman targets, replay buffers, target networks, minimax, and alpha-beta pruning.
+
+---
+
+## Why this repository exists
+
+This is not an API-wrapper portfolio. The goal is to show small, reviewable implementations where the core mechanics are visible in source code.
+
+A technical reviewer should be able to inspect this repository and see evidence of:
+
+- algorithmic reasoning;
+- from-scratch ML/RL mechanics;
+- command-line interface design;
+- deterministic behavior;
+- input validation and error handling;
+- cross-language consistency;
+- build/test automation.
 
 ---
 
@@ -29,7 +47,7 @@ A small decision engine implemented in **eight programming languages**:
 
 Each implementation solves the same Tic-Tac-Toe position using **minimax with alpha-beta pruning** and returns the result through one shared JSON protocol.
 
-This is deliberately a compact project: the interesting part is not Tic-Tac-Toe itself, but demonstrating that the same algorithm, interfaces, validation rules, and CI contract can be expressed consistently across different language ecosystems.
+This is deliberately compact: the interesting part is not Tic-Tac-Toe itself, but demonstrating that the same algorithm, interfaces, validation rules, and CI contract can be expressed consistently across different language ecosystems.
 
 ## Example
 
@@ -62,16 +80,34 @@ Expected result: X selects index `2` and wins immediately.
 
 It demonstrates:
 
-- algorithmic reasoning
-- minimax and alpha-beta pruning
-- recursion and state rollback
-- deterministic tie-breaking
-- command-line interface design
-- input validation and error handling
-- JSON interoperability
-- cross-language CI on Linux and macOS
+- algorithmic reasoning;
+- minimax and alpha-beta pruning;
+- recursion and state rollback;
+- deterministic tie-breaking;
+- command-line interface design;
+- input validation and error handling;
+- JSON interoperability;
+- cross-language CI on Linux and macOS.
 
 It is small enough to explain in an interview without pretending to be a production AI platform.
+
+## Technical interview notes
+
+The repository includes a dedicated interview guide: [TECHNICAL_INTERVIEW_NOTES.md](./TECHNICAL_INTERVIEW_NOTES.md).
+
+It covers:
+
+- reverse-mode autodiff;
+- binary cross-entropy;
+- Adam optimizer;
+- Deep Q-Networks;
+- Bellman targets;
+- replay buffers;
+- target networks;
+- epsilon-greedy exploration;
+- minimax;
+- alpha-beta pruning;
+- why a shared cross-language protocol matters.
 
 ## Unified interface
 
@@ -170,7 +206,8 @@ GitHub Actions compiles and runs all eight implementations. A comparison script 
 - add transposition tables;
 - expose the engine through a small web visualizer;
 - generate property-based test positions;
-- compare minimax against Monte Carlo Tree Search.
+- compare minimax against Monte Carlo Tree Search;
+- add screenshots and real output captures to make the project easier to evaluate visually.
 
 ## Status
 
